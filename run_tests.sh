@@ -3,4 +3,4 @@ set -e
 
 . ~/.virtualenvs/testproject/bin/activate
 
-PYTHONPATH=. py.test --junitxml=python_tests1.xml
+PYTHONPATH=. py.test --junitxml=python_tests.xml
