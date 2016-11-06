@@ -21,6 +21,7 @@ def test_darArchivos(client):
 	esta1="files.py" in result.data
 	assert esta, "comandos.py deberia de aparecer en los archivos listados"
 	assert esta1, "files.py deberia de aparecer en los archivos listados"
+	assert result.status=="200 OK", "El codigo de respuesta indica un error"
 	
 	
 	
