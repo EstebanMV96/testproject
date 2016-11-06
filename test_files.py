@@ -14,6 +14,9 @@ def darArchivos(client):
 def eliminarArchivos(client):
 	return client.delete('/files',follow_redirects=True)
 
+def recently(client):
+	return client.get('/files/recently_created',follow_redirects=True)
+
 
 def test_darArchivos(client):
 	result=darArchivos(client)
@@ -28,4 +31,9 @@ def test_darArchivos(client):
 def test_eliminarArchivos(client):
 	result=eliminarArchivos(client)
 	assert "Todos los archivos no VIP fueron borrados" in result.data 
+	assert result.status=="200 OK", "El codigo de respuesta indica un error"
 
+
+def test_recently(client):
+	result=recently(client)
+	assert result.status=="200 OK", "El codigo de respuesta no fue el esperado"
