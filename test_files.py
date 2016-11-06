@@ -20,5 +20,5 @@ def test_darArchivos(client):
 
 def test_eliminarArchivos(client):
 	result=eliminarArchivos(client)
-	assert result=="200 OK"
+	assert "200 OK" in result.data
 
