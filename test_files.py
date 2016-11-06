@@ -16,9 +16,10 @@ def eliminarArchivos(client):
 
 def test_darArchivos(client):
 	result=darArchivos(client)
-	assert "200" in result.data
+	resultado="comandos.py" in result.data() && "files.py" in result.data()
+	assert resultado, "No esta listando bien los archivos"
 
 def test_eliminarArchivos(client):
 	result=eliminarArchivos(client)
-	assert "Todos los archivos no VIP fueron borrados" in result.data
+	assert "Todos los archivos no VIP fueron borrados" in result.data, "Hubo problema al borrar los archivos"
 
