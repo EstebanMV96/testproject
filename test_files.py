@@ -17,13 +17,14 @@ def eliminarArchivos(client):
 
 def test_darArchivos(client):
 	result=darArchivos(client)
-	estaLleno=False
-	estaLleno=len(result.data())>0
-	assert estaLleno==True
+	esta="comandos.py" in result.data
+	esta1="files.py" in result.data
+	assert esta, "comandos.py deberia de aparecer en los archivos listados"
+	assert esta1, "files.py deberia de aparecer en los archivos listados"
 	
 	
 	
 def test_eliminarArchivos(client):
 	result=eliminarArchivos(client)
-	assert "Hola" in result.data() 
+	assert "Todos los archivos no VIP fueron borrados" in result.data 
 
