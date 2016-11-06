@@ -47,4 +47,4 @@ def test_recently(client):
 
 def test_crearArchivo(client):
 	result=crearArchivo(client)
-	assert result.status="201 CREATED", "Ocurrio un error al crear el archivo"
+	assert result.status=="201 CREATED", "Ocurrio un error al crear el archivo"
