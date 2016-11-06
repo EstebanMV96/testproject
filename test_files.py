@@ -17,11 +17,12 @@ def eliminarArchivos(client):
 
 def test_darArchivos(client):
 	result=darArchivos(client)
-	content=result.get_json(silent=True)
-	archivos= content['files']
-	resultado="comandos.py" in archivos
-
+	estaLleno=len(result)>0
+	assert estaLleno
+	
+	
+	
 def test_eliminarArchivos(client):
 	result=eliminarArchivos(client)
-	assert "Todos los archivos no VIP fueron borrados" in result.data()
+	assert "Todos los archivos no VIP fueron borrados" in result.data(), "Hubo un error al borrar los archivos"
 
