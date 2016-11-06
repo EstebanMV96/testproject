@@ -16,7 +16,7 @@ def eliminarArchivos(client):
 
 def test_darArchivos(client):
 	result=darArchivos(client)
-	resultado="comandos.py" in result.data() && "files.py" in result.data()
+	resultado="comandos.py" in result.data() 
 	assert resultado, "No esta listando bien los archivos"
 
 def test_eliminarArchivos(client):
