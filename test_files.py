@@ -1,5 +1,6 @@
 import pytest
 import files
+import json
 
 @pytest.fixture
 def client(request):
@@ -16,10 +17,11 @@ def eliminarArchivos(client):
 
 def test_darArchivos(client):
 	result=darArchivos(client)
-	resultado="comandos.py" in result.data() 
-	assert resultado, "No esta listando bien los archivos"
+	content=result.get_json(silent=True)
+	archivos= content['files']
+	resultado="comandos.py" in archivos
 
 def test_eliminarArchivos(client):
 	result=eliminarArchivos(client)
-	assert "Todos los archivos no VIP fueron borrados" in result.data, "Hubo problema al borrar los archivos"
+	assert "Todos los archivos no VIP fueron borrados" in result.data()
 
