@@ -17,12 +17,12 @@ def eliminarArchivos(client):
 
 def test_darArchivos(client):
 	result=darArchivos(client)
-	estaLleno=len(result.datda())>0
+	estaLleno=len(result.data())>0
 	assert estaLleno
 	
 	
 	
 def test_eliminarArchivos(client):
 	result=eliminarArchivos(client)
-	assert "Todos los archivos no VIP fueron borrados" in result, "Hubo un error al borrar los archivos"
+	assert 200 in result.data(), "Hubo un error al borrar los archivos"
 
