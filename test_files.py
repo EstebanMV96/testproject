@@ -19,11 +19,11 @@ def test_darArchivos(client):
 	result=darArchivos(client)
 	estaLleno=False
 	estaLleno=len(result.data())>0
-	asserts estaLleno==True
+	assert estaLleno==True
 	
 	
 	
 def test_eliminarArchivos(client):
 	result=eliminarArchivos(client)
-	asserts "Hola" == result.data() 
+	assert "Hola" in result.data() 
 
