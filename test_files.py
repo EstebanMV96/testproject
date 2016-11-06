@@ -20,5 +20,5 @@ def test_darArchivos(client):
 
 def test_eliminarArchivos(client):
 	result=eliminarArchivos(client)
-	assert result=="Todos los archivos no VIP fueron borrados"
+	assert result=="200 OK"
 
